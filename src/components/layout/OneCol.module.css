@@ -1,0 +1,10 @@
+.container {
+    width: 788px;
+    max-width: 100%;
+    padding: 30px 20px;
+}
+
+.logo {
+    width: 154px;
+    height: auto;
+}
