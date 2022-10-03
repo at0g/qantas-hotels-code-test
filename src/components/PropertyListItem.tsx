@@ -31,7 +31,7 @@ export const PropertyListItem = (props: PropertyListItemProps) => {
             <div className={styles.content}>
                 <div className={styles.offerHeader}>
                     <h2 className={styles.title}>{props.title}</h2>
-                    <Rating value={props.ratingValue} type="USER" />
+                    <Rating value={props.ratingValue} type={props.ratingType} />
                 </div>
                 <div className={styles.address}>{props.address}</div>
 
