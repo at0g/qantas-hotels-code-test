@@ -6,7 +6,7 @@ type PropertyListItemProps = {
     address: string;
     badge: string;
     cancellationOption?: string;
-    currency?: string;
+    currency: string;
     image: {
         src: string;
         alt: string;
@@ -46,7 +46,7 @@ export const PropertyListItem = (props: PropertyListItemProps) => {
                         )}
                     </div>
                     <div className={styles.offerPricing}>
-                        <div className={styles.offerPrefix}>1 night total ({props.currency ?? 'AUD'})</div>
+                        <div className={styles.offerPrefix}>1 night total ({props.currency})</div>
                         <div className={styles.offerPrice}>
                             <sup className={styles.currencySymbol}>$</sup>
                             {props.offerPrice}
