@@ -16,11 +16,9 @@ type ListResultsHeaderProps = {
 }
 
 export const ListResultsHeader = (props: ListResultsHeaderProps) => {
-
     const handleSubmit = useCallback<FormEventHandler>((evt) => {
         evt.preventDefault();
     }, []);
-
     const handleChange = useCallback<FormEventHandler<HTMLSelectElement>>((evt) => {
         props.onChange(evt.currentTarget.value as SortValues);
     }, [props.onChange]);
@@ -31,7 +29,7 @@ export const ListResultsHeader = (props: ListResultsHeaderProps) => {
             <div>
                 <form onSubmit={handleSubmit}>
                     <label>Sort by&nbsp;
-                        <select onChange={handleChange}>
+                        <select onChange={handleChange} name="sort-by">
                             <option value={PRICE_DESC}>Price high-low</option>
                             <option value={PRICE_ASC}>Price low-high</option>
                         </select>

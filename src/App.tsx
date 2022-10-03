@@ -22,6 +22,7 @@ function App() {
 
         const props: React.ComponentProps<typeof PropertyListItem> & { key: string; } = {
             key: result.id,
+            testId: `deal-${result.id}`,
             address: result.property.address.join(', '),
             badge: result.offer.promotion.title,
             cancellationOption,

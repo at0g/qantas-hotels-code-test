@@ -17,11 +17,12 @@ type PropertyListItemProps = {
     offerTitle: string;
     ratingValue: number;
     ratingType: ComponentProps<typeof Rating>['type'];
+    testId: string;
 }
 
 export const PropertyListItem = (props: PropertyListItemProps) => {
     return (
-        <div className={styles.PropertyListItem}>
+        <div className={styles.PropertyListItem} data-testid={props.testId}>
             <img
                 src={props.image.src}
                 alt={props.image.alt}

@@ -47,7 +47,7 @@ type RatingProps = {
 export const Rating = (props: RatingProps) => {
     const Indicator = props.type === 'USER' ? Star : Circle
     return (
-        <div className={styles.Rating}>
+        <div className={styles.Rating} data-testid={`${props.type.toLowerCase()}_rating:${props.value}`}>
             {Array.from({ length: 5 }).map((_, index) => {
                 let value: 0 | 0.5 | 1 = 0;
                 if (index + 1 <= props.value) {
