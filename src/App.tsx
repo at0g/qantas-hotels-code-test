@@ -1,11 +1,12 @@
-import React, {useMemo} from 'react';
+import React, {useCallback, useMemo, useState} from 'react';
 import { OneCol } from "./components/layout";
 import {useResults} from "./useResults";
 import {PropertyListItem} from "./components/PropertyListItem";
+import {ListResultsHeader} from "./components/ListResultsHeader";
 
 function App() {
     const [data] = useResults('/data.json');
-
+    const [sortMode, setSortMode] = useState<'PRICE_ASC' | 'PRICE_DESC'>('PRICE_DESC');
     const mappedData = useMemo(() => data.map((result) => {
         const img = {
             src: result.property.previewImage.url,
@@ -36,18 +37,46 @@ function App() {
 
         return props;
     }), [data])
+    const sortedData = useMemo(() => mappedData.sort((a, b) => {
+        if (sortMode === 'PRICE_ASC') {
+            if (a.offerPrice < b.offerPrice) {
+                return -1;
+            }
+            if (a.offerPrice > b.offerPrice) {
+                return 1;
+            }
+            return 0;
+        }
 
-  return (
-    <OneCol>
-        {mappedData.map(({ key, ...props}) => (
-            <PropertyListItem
-                key={key}
-                {...props}
-            />
-        ))}
+        if(sortMode === 'PRICE_DESC') {
+            if (a.offerPrice > b.offerPrice) {
+                return -1;
+            }
+            if (a.offerPrice < b.offerPrice) {
+                return 1;
+            }
+            return 0;
+        }
+        return 0;
+    }), [mappedData, sortMode])
 
-    </OneCol>
-  );
+    const header = <ListResultsHeader
+        resultsCount={mappedData.length}
+        resultsLocation="Sydney"
+        onChange={setSortMode}
+        value={sortMode}
+    />
+
+    return (
+        <OneCol header={header}>
+            {sortedData.map(({ key, ...props}) => (
+                <PropertyListItem
+                    key={key}
+                    {...props}
+                />
+            ))}
+        </OneCol>
+    );
 }
 
 export default App;

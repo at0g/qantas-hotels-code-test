@@ -2,7 +2,8 @@ import React from 'react'
 import styles from './OneCol.module.css'
 
 type OneColProps = {
-    children: React.ReactNode
+    children: React.ReactNode;
+    header?: React.ReactNode;
 }
 
 export const OneCol = (props: OneColProps) => {
@@ -14,6 +15,7 @@ export const OneCol = (props: OneColProps) => {
                     src="/qantas-logo.png"
                     className={styles.logo}
                 />
+                {props.header}
             </header>
             <main>
             {props.children}
