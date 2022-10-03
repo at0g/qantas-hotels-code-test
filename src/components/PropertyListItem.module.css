@@ -1,0 +1,73 @@
+.PropertyListItem {
+    display: flex;
+    flex-flow: row;
+    position: relative;
+    margin-top: 12px;
+}
+
+.image {
+    width: 150px;
+    height: 126px;
+    object-fit: cover;
+    border: 1px solid #d9dfd2;
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    justify-content: stretch;
+}
+
+.offerDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-top: 18px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 500;
+    max-width: 16em;
+    margin: 5px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.title:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #dbdcdd;
+    position: absolute;
+    top: -6px;
+}
+
+.address {
+    color: #8c8d8e;
+    font-size: 12px;
+}
+
+.offerTitle {
+    color: #e40000;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.badge {
+    color: #e40000;
+    background-color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 10px;
+    position: absolute;
+    left: 1px;
+    top: 6px;
+}
