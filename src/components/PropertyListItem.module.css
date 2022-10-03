@@ -34,11 +34,17 @@
     top: 6px;
 }
 
+.offerHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
 .title {
     font-size: 18px;
     font-weight: 500;
     max-width: 16em;
-    margin: 5px 0;
+    margin: 5px 10px 5px 0;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

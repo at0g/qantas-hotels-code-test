@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {ComponentProps} from 'react';
 import styles from './PropertyListItem.module.css';
+import {Rating} from "./Rating";
 
 type PropertyListItemProps = {
     address: string;
@@ -14,6 +15,8 @@ type PropertyListItemProps = {
     offerPrice: number;
     offerSavings?: number;
     offerTitle: string;
+    ratingValue: number;
+    ratingType: ComponentProps<typeof Rating>['type'];
 }
 
 export const PropertyListItem = (props: PropertyListItemProps) => {
@@ -26,7 +29,10 @@ export const PropertyListItem = (props: PropertyListItemProps) => {
             />
 
             <div className={styles.content}>
-                <h2 className={styles.title}>{props.title}</h2>
+                <div className={styles.offerHeader}>
+                    <h2 className={styles.title}>{props.title}</h2>
+                    <Rating value={props.ratingValue} type="USER" />
+                </div>
                 <div className={styles.address}>{props.address}</div>
 
                 <div className={styles.offerDetails}>

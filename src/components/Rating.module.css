@@ -1,0 +1,9 @@
+.Rating {
+    display: inline-flex;
+    flex-flow: row nowrap;
+}
+
+.Star {
+    width: 15px;
+    height: auto;
+}

@@ -17,6 +17,10 @@ function App() {
                 ? 'Free cancellation'
                 : undefined;
 
+            const ratingType = result.property.rating.ratingType === 'star'
+                ? 'USER'
+                : 'SELF'
+
             return (
                 <PropertyListItem
                     key={result.id}
@@ -29,6 +33,8 @@ function App() {
                     offerPrice={result.offer.displayPrice.amount}
                     offerSavings={result.offer.savings?.amount}
                     offerTitle={result.offer.name}
+                    ratingValue={result.property.rating.ratingValue}
+                    ratingType={ratingType}
                 />
             )
         })}
