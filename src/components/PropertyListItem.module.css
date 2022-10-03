@@ -38,6 +38,16 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    position: relative;
+}
+.offerHeader:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #dbdcdd;
+    position: absolute;
+    top: -6px;
 }
 
 .title {
@@ -48,15 +58,6 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-.title:before {
-    content: '';
-    display: block;
-    height: 1px;
-    width: 100%;
-    background-color: #dbdcdd;
-    position: absolute;
-    top: -6px;
 }
 
 .address {
