@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import { OneCol } from "./components/layout";
 import {useResults} from "./useResults";
 import {PropertyListItem} from "./components/PropertyListItem";
